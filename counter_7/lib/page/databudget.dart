@@ -1,9 +1,10 @@
 import 'dart:collection';
 
+import 'package:counter_7/page/mywatchlist.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/budgetform.dart';
-import 'package:counter_7/budgetmodel.dart';
+import 'package:counter_7/page/budgetform.dart';
+import 'package:counter_7/models/budgetmodel.dart';
 
 List dataBudget = <Budget>[];
 
@@ -52,6 +53,16 @@ class _DataBudgetPageState extends State<DataBudgetPage> {
                 // Route menu ke halaman form
                 Navigator.pop(
                   context,
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyWatchList()),
                 );
               },
             ),
