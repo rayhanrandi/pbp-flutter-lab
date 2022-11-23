@@ -50,7 +50,7 @@ class Fields {
   String review;
 
   factory Fields.fromJson(Map<String, dynamic> json) => Fields(
-        watched: json["watched"],
+        watched: watchedValues.map[json["watched"]]!,
         title: json["title"],
         rating: json["rating"],
         releaseDate: json["release_date"],
