@@ -79,90 +79,97 @@ class MyWatchListDetail extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              movie.fields.title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              textAlign: TextAlign.center,
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                movie.fields.title,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RichText(
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black,
+          Align(
+            alignment: Alignment.topLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        const TextSpan(
+                            text: 'Release Date: ',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: movie.fields.releaseDate),
+                      ],
                     ),
-                    children: <TextSpan>[
-                      const TextSpan(
-                          text: 'Release Date: ',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: movie.fields.releaseDate),
-                    ],
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RichText(
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        const TextSpan(
+                            text: 'Rating: ',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: "${movie.fields.rating}/10"),
+                      ],
                     ),
-                    children: <TextSpan>[
-                      const TextSpan(
-                          text: 'Rating: ',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: "${movie.fields.rating}/10"),
-                    ],
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RichText(
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        const TextSpan(
+                            text: 'Watched: ',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: watchStatus(movie.fields.watched)),
+                      ],
                     ),
-                    children: <TextSpan>[
-                      const TextSpan(
-                          text: 'Watched: ',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: watchStatus(movie.fields.watched)),
-                    ],
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: RichText(
-                  text: TextSpan(
-                    style: const TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        const TextSpan(
+                            text: 'Review: \n',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: movie.fields.review),
+                      ],
                     ),
-                    children: <TextSpan>[
-                      const TextSpan(
-                          text: 'Review: \n',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: movie.fields.review),
-                    ],
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),
